@@ -8,14 +8,14 @@
   <body>
     <h1>Countries API</h1>
 
-    <!-- <form id="form"> -->
-    <input type="text" placeholder="Entrez un nom de pays ici" />
-    <input type="radio" name="search" id="capitalSearch" />
-    <label for="capitalSearch">Recherche par Capital</label>
-    <input type="radio" name="search" id="countrySearch" />
-    <label for="countrySearch">Recherche par Pays</label>
-    <button id="btnShowData">Show Data</button>
-    <!-- </form> -->
+    <form id="form">
+      <input type="text" placeholder="Entrez un nom de pays ici" />
+      <input type="radio" name="search" id="capitalSearch" value="capital" />
+      <label for="capitalSearch">Recherche par Capital</label>
+      <input type="radio" name="search" id="countrySearch" value="country" />
+      <label for="countrySearch">Recherche par Pays</label>
+      <button type="submit" id="btnShowData">Show Data</button>
+    </form>
 
     <div>
       <ul id="countriesList"></ul>

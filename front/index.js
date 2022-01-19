@@ -35,36 +35,31 @@ button.addEventListener("click", () => {
   startSearchProgram();
 });
 
-async function getCountriesByName() {
+async function getUserCountries() {
+  const selected = document.querySelector(
+    "input[type=radio][name=contact]:checked"
+  ).value;
+
   const userInput = document.querySelector("input").value;
-  const res = await fetch(`https://restcountries.com/v3.1/${userInput}`);
-  const data = await res.json();
 
-  return data;
-}
+  let res1;
 
-async function getCountriesByCapital() {
-  const userInput = document.querySelector("input").value;
-  const res = await fetch(
-    `https://restcountries.com/v3.1/capital/${userInput}`
-  );
-  const data = await res.json();
-
-  return data;
+  if (selected === "country") {
+    res1 = await fetch(`https://restcountries.com/v3.1/name/${userInput}`);
+  } else if (selected === "capital") {
+    res1 = await fetch(`https://restcountries.com/v3.1/capital/${userInput}`);
+  }
+  const data1 = await res1.json();
+  return data1;
 }
 
 async function startSearchProgram() {
-  const country = await getCountriesByName();
+  const country1 = await getUserCountries();
 
-  const list = document.querySelector("#countriesList");
-  list.innerHTML = `<li>
-      <p>Country : ${country.flag}  ${country.name.common.toUpperCase()}</p>
-      <p>Capital : ${country.capital}</p>
-      <p>Population : ${country.population}</p>
-      </li>`;
-
-    const capital = await getCountriesByCapital();
-  };
-
-  
+  const list1 = document.querySelector("#countriesList");
+  list1.innerHTML = `<li>
+  <p>Country : ${country1[0].flag}  ${country1[0].name.common.toUpperCase()}</p>
+  <p>Capital : ${country1[0].capital}</p>
+  <p>Population : ${country1[0].population}</p>
+  </li>`;
 }

@@ -55,6 +55,7 @@
                 id="continentSearch"
                 value="continent"
               />
+
               <label for="continents">Ou choisissez un continent :</label>
               <select name="continents" id="continents">
                 <option value="voila"></option>
@@ -67,21 +68,25 @@
             </div>
           </div>
           <div id="submitButtons">
-            <input type="reset" id="btnReset" />
-            <button type="submit" id="btnShowData">Show Data</button>
+            <input type="reset" id="btnReset" class="m-2 btn btn-danger" />
+            <button type="submit" id="btnShowData" class="m-2 btn btn-success">
+              Show Data
+            </button>
           </div>
         </form>
       </div>
 
-      <div id="main-text" class="font-monospace m-3">
-        <ul id="countriesList">
-          <!-- <div class="spinner-border text-primary" role="status">
+      <div class="row">
+        <div id="main-text" class="font-monospace m-3 ps-5 col-4">
+          <ul id="countriesList">
+            <!-- <div class="spinner-border text-primary" role="status">
           <span class="visually-hidden">Loading...</span>
         </div> -->
-        </ul>
-      </div>
+          </ul>
+        </div>
 
-      <div id="map"></div>
+        <div id="map" class="col-8 mb-3"></div>
+      </div>
     </main>
     <script src="jQuery.js"></script>
     <script src="bootstrap.js"></script>

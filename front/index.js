@@ -27,21 +27,30 @@ startProgram();
 
 // ***************** //
 // RECHERCHE PAR CAPITALE OU PAYS
+// ***************** //
 
 // On écoute le click du bouton qui va lancer le programme
 const button = document.querySelector("#btnShowData");
+const reset = document.querySelector("#btnReset");
 
+// RESET
+reset.addEventListener("click", () => {
+  startProgram();
+});
+
+// Bouton recherche par pays/capitale
 button.addEventListener("click", () => {
   startSearchProgram();
 });
 
+// Fonction de recherche du pays par entrée utilisateur
 async function getUserCountries() {
-  const selected = document.querySelector(
-    "input[type=radio][name=contact]:checked"
-  ).value;
+  // On récupère le check radio
+  const selected = document.querySelector('input[name="search"]:checked').value;
 
   const userInput = document.querySelector("input").value;
 
+  // Recherche à 2 adresses différentes selon la radio sélectionnée et le pays/capitale entrés dans l'input
   let res1;
 
   if (selected === "country") {
@@ -53,13 +62,28 @@ async function getUserCountries() {
   return data1;
 }
 
+// Fonction de recherche par entrée utilisateur
 async function startSearchProgram() {
+  // On récupère le résultat de getUserCountries()...
   const country1 = await getUserCountries();
 
+  // .. Et on l'affiche dans le HTML
   const list1 = document.querySelector("#countriesList");
   list1.innerHTML = `<li>
   <p>Country : ${country1[0].flag}  ${country1[0].name.common.toUpperCase()}</p>
   <p>Capital : ${country1[0].capital}</p>
   <p>Population : ${country1[0].population}</p>
   </li>`;
+}
+
+// **************** //
+// RECHERCHE PAR MENU DEROULANT CONTINENT //
+// **************** //
+
+// Fonction recherche par continent
+const selectContinent = document.getElementsByName("continents")[0];
+
+for (let i = 1; i < selectContinent.length; i++) {
+  let continent = selectContinent[i].value;
+  console.log(continent);
 }

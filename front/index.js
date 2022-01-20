@@ -97,10 +97,7 @@ async function startSearchProgram() {
 
   // ******** LEAFLET ********* //
 
-  var map = L.map("map").setView(
-    [country1[0].latlng[0], country1[0].latlng[1]],
-    6
-  );
+  let map = L.map("map");
 
   L.tileLayer(
     "https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token={accessToken}",
@@ -115,8 +112,12 @@ async function startSearchProgram() {
         "pk.eyJ1IjoiY2FuYWRhc2VjIiwiYSI6ImNreW16bGw1NTE1cnkyb3Vmajlzbmc5aXAifQ.5WbzFfz5_VFTGQoMthfRwA",
     }
   ).addTo(map);
-}
 
+  map.setView([country1[0].latlng[0], country1[0].latlng[1]], 5, {
+    animate: true,
+    duration: 2,
+  });
+}
 // **************** //
 // RECHERCHE PAR MENU DEROULANT CONTINENT //
 // **************** //

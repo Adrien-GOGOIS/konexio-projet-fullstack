@@ -17,37 +17,44 @@
     <h1>Countries API</h1>
 
     <form id="form">
-      <input type="text" placeholder="Entrez un nom de pays ici" />
-      <input type="radio" name="search" id="capitalSearch" value="capital" />
-      <label for="capitalSearch">Recherche par Capital</label>
       <input
-        type="radio"
-        name="search"
-        id="countrySearch"
-        value="country"
-        checked
+        type="text"
+        placeholder="Entrez un nom de pays ici"
+        id="userInputName"
       />
-      <label for="countrySearch">Recherche par Pays</label>
+      <div id="radio">
+        <input type="radio" name="search" id="capitalSearch" value="capital" />
+        <label for="capitalSearch">Recherche par Capital</label>
+        <input
+          type="radio"
+          name="search"
+          id="countrySearch"
+          value="country"
+          checked
+        />
+        <label for="countrySearch">Recherche par Pays</label>
 
-      <!-- Recherche par continent -->
-      <input
-        type="radio"
-        name="search"
-        id="continentSearch"
-        value="continent"
-      />
-      <label for="continents">Ou choisissez un continent :</label>
-      <select name="continents" id="continents">
-        <option value="voila"></option>
-        <option value="africa">Afrique</option>
-        <option value="america">Amerique</option>
-        <option value="asia">Asie</option>
-        <option value="europe">Europe</option>
-        <option value="oceania">Océanie</option>
-      </select>
-
-      <input type="reset" id="btnReset" />
-      <button type="submit" id="btnShowData">Show Data</button>
+        <!-- Recherche par continent -->
+        <input
+          type="radio"
+          name="search"
+          id="continentSearch"
+          value="continent"
+        />
+        <label for="continents">Ou choisissez un continent :</label>
+        <select name="continents" id="continents">
+          <option value="voila"></option>
+          <option value="africa">Afrique</option>
+          <option value="america">Amerique</option>
+          <option value="asia">Asie</option>
+          <option value="europe">Europe</option>
+          <option value="oceania">Océanie</option>
+        </select>
+      </div>
+      <div id="submitButtons">
+        <input type="reset" id="btnReset" />
+        <button type="submit" id="btnShowData">Show Data</button>
+      </div>
     </form>
 
     <div id="main-text">

@@ -1,4 +1,59 @@
+body {
+  margin: 0;
+  padding: 0;
+  background-color: rgb(235, 233, 233);
+}
+
 #map {
   height: 600px;
   width: 50%;
+  font-size: 67.5%;
+}
+
+h1 {
+  text-align: center;
+  font-size: 5rem;
+  margin: 5vh 15vw;
+  border: solid black 5px;
+}
+
+#form {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+#radio {
+  margin: 1vw;
+}
+
+label {
+  margin-right: 2vw;
+  margin-left: 0.5vw;
+}
+
+button {
+  margin: 1rem 0;
+  border: solid blue 0.1rem;
+  border-radius: 1rem;
+  height: 3rem;
+}
+
+#btnReset {
+  margin: 1rem 0;
+  border: solid blue 0.1rem;
+  color: white;
+  background-color: black;
+  border-radius: 1rem;
+  height: 3rem;
+}
+
+#userInputName {
+  width: 40vw;
+  text-align: center;
+}
+
+#continents {
+  width: 15vw;
 }

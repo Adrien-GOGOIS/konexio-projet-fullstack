@@ -94,6 +94,27 @@ async function startSearchProgram() {
   <p>Capital : ${country1[0].capital}</p>
   <p>Population : ${country1[0].population}</p>
   </li>`;
+
+  // ******** LEAFLET ********* //
+
+  var map = L.map("map").setView(
+    [country1[0].latlng[0], country1[0].latlng[1]],
+    6
+  );
+
+  L.tileLayer(
+    "https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token={accessToken}",
+    {
+      attribution:
+        'Map data &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors, Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
+      maxZoom: 18,
+      id: "mapbox/streets-v11",
+      tileSize: 512,
+      zoomOffset: -1,
+      accessToken:
+        "pk.eyJ1IjoiY2FuYWRhc2VjIiwiYSI6ImNreW16bGw1NTE1cnkyb3Vmajlzbmc5aXAifQ.5WbzFfz5_VFTGQoMthfRwA",
+    }
+  ).addTo(map);
 }
 
 // **************** //

@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="fr">
+<html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -14,28 +14,37 @@
     <title>Countries API</title>
   </head>
   <body>
-    <header>
-      <h1 class="display-1 align-middle text-center m-3">Countries API</h1>
+    <header class="text-center">
+      <h1
+        class="display-1 text-center p-4 m-2 border-bottom border-dark border-3"
+      >
+        Countries API
+      </h1>
     </header>
 
     <main>
       <div class="m-3 p-5">
-        <form id="form" class="m-3">
-          <input
-            type="text"
-            placeholder="Entrez un nom de pays ici"
-            id="userInputName"
-            class="p-2 m-2 w-75"
-          />
-          <div id="radio" class="m-2 w-75 row">
-            <div class="pe-1 col-3">
+        <form id="form" class="m-4">
+          <div class="input-group mb-3 w-75">
+            <span class="input-group-text" id="inputGroup-sizing-lg"
+              >Which country are you looking for?</span
+            >
+            <input
+              type="text"
+              placeholder="Exp : USA - France - Rome - Oslo"
+              id="userInputName"
+              class="form-control"
+            />
+          </div>
+          <div id="radio" class="m-2 w-75 row text-center">
+            <div class="col-3">
               <input
                 type="radio"
                 name="search"
                 id="capitalSearch"
                 value="capital"
               />
-              <label for="capitalSearch">Recherche par Capital</label>
+              <label for="capitalSearch" class="ms-2">Search by capital</label>
             </div>
             <div class="col-3">
               <input
@@ -45,7 +54,9 @@
                 value="country"
                 checked
               />
-              <label for="countrySearch">Recherche par Pays</label>
+              <label for="countrySearch" class="ms-2"
+                >Search by country name</label
+              >
             </div>
             <!-- Recherche par continent -->
             <div class="col-6">
@@ -56,8 +67,10 @@
                 value="continent"
               />
 
-              <label for="continents">Ou choisissez un continent :</label>
-              <select name="continents" id="continents">
+              <label for="continents" class="ms-2"
+                >Or choose a continent :</label
+              >
+              <select name="continents" id="continents" class="w-50 ms-2">
                 <option value="voila"></option>
                 <option value="africa">Afrique</option>
                 <option value="america">Amerique</option>

@@ -23,6 +23,7 @@ async function startProgram() {
 }
 
 // Demarrage programme affichage des pays au chargement de la page
+
 startProgram();
 
 // ***************** //
@@ -31,6 +32,7 @@ startProgram();
 
 // On écoute le click du bouton qui va lancer le programme
 const button = document.querySelector("#btnShowData");
+const form = document.querySelector("#form");
 const reset = document.querySelector("#btnReset");
 
 // RESET
@@ -39,7 +41,8 @@ reset.addEventListener("click", () => {
 });
 
 // Bouton recherche par pays/capitale
-button.addEventListener("click", () => {
+form.addEventListener("submit", (event) => {
+  event.preventDefault();
   startSearchProgram();
 });
 
@@ -49,7 +52,7 @@ async function getUserCountries() {
   const selected = document.querySelector('input[name="search"]:checked').value;
   const userInput = document.querySelector("input").value;
 
-  // GUARD pour passer à la sélection par continent
+  // GUARD pour passer à la sélection par continent si radio 'continent' selectionnée
   if (selected === "continent") {
     startContinentProgram();
     return;
@@ -112,4 +115,12 @@ async function startContinentProgram() {
 
   const list2 = document.querySelector("#countriesList");
   list2.innerHTML = continentCountriesName.join("");
+}
+
+// FONCTION DE CHARGEMENT DE LA PAGE
+
+function loading() {
+  list.innerHTML = `<div class="spinner-border text-primary" role="status">
+  <span class="visually-hidden">Loading...</span>
+</div>`;
 }

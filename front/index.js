@@ -23,7 +23,6 @@ async function startProgram() {
 }
 
 // Demarrage programme affichage des pays au chargement de la page
-
 startProgram();
 
 // ***************** //
@@ -120,7 +119,5 @@ async function startContinentProgram() {
 // FONCTION DE CHARGEMENT DE LA PAGE
 
 function loading() {
-  list.innerHTML = `<div class="spinner-border text-primary" role="status">
-  <span class="visually-hidden">Loading...</span>
-</div>`;
+  list.innerHTML = "LOL";
 }

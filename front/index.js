@@ -1,5 +1,16 @@
+// FONCTION DE CHARGEMENT DE LA PAGE
+
+function loading() {
+  document.querySelector(
+    "#countriesList"
+  ).innerHTML = `<div class="spinner-border text-primary" role="status">
+  <span class="visually-hidden">Loading...</span>
+</div>`;
+}
+
 // On récupère la liste des pays
 async function getCountries() {
+  loading();
   const res = await fetch(`https://restcountries.com/v3.1/all`);
   const data = await res.json();
 
@@ -114,10 +125,4 @@ async function startContinentProgram() {
 
   const list2 = document.querySelector("#countriesList");
   list2.innerHTML = continentCountriesName.join("");
-}
-
-// FONCTION DE CHARGEMENT DE LA PAGE
-
-function loading() {
-  list.innerHTML = "LOL";
 }

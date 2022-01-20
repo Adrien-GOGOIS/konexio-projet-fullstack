@@ -14,58 +14,75 @@
     <title>Countries API</title>
   </head>
   <body>
-    <h1>Countries API</h1>
+    <header>
+      <h1 class="display-1 align-middle text-center m-3">Countries API</h1>
+    </header>
 
-    <form id="form">
-      <input
-        type="text"
-        placeholder="Entrez un nom de pays ici"
-        id="userInputName"
-      />
-      <div id="radio">
-        <input type="radio" name="search" id="capitalSearch" value="capital" />
-        <label for="capitalSearch">Recherche par Capital</label>
-        <input
-          type="radio"
-          name="search"
-          id="countrySearch"
-          value="country"
-          checked
-        />
-        <label for="countrySearch">Recherche par Pays</label>
-
-        <!-- Recherche par continent -->
-        <input
-          type="radio"
-          name="search"
-          id="continentSearch"
-          value="continent"
-        />
-        <label for="continents">Ou choisissez un continent :</label>
-        <select name="continents" id="continents">
-          <option value="voila"></option>
-          <option value="africa">Afrique</option>
-          <option value="america">Amerique</option>
-          <option value="asia">Asie</option>
-          <option value="europe">Europe</option>
-          <option value="oceania">Océanie</option>
-        </select>
+    <main>
+      <div class="m-3 p-5">
+        <form id="form" class="m-3">
+          <input
+            type="text"
+            placeholder="Entrez un nom de pays ici"
+            id="userInputName"
+            class="p-2 m-2 w-75"
+          />
+          <div id="radio" class="m-2 w-75 row">
+            <div class="pe-1 col-3">
+              <input
+                type="radio"
+                name="search"
+                id="capitalSearch"
+                value="capital"
+              />
+              <label for="capitalSearch">Recherche par Capital</label>
+            </div>
+            <div class="col-3">
+              <input
+                type="radio"
+                name="search"
+                id="countrySearch"
+                value="country"
+                checked
+              />
+              <label for="countrySearch">Recherche par Pays</label>
+            </div>
+            <!-- Recherche par continent -->
+            <div class="col-6">
+              <input
+                type="radio"
+                name="search"
+                id="continentSearch"
+                value="continent"
+              />
+              <label for="continents">Ou choisissez un continent :</label>
+              <select name="continents" id="continents">
+                <option value="voila"></option>
+                <option value="africa">Afrique</option>
+                <option value="america">Amerique</option>
+                <option value="asia">Asie</option>
+                <option value="europe">Europe</option>
+                <option value="oceania">Océanie</option>
+              </select>
+            </div>
+          </div>
+          <div id="submitButtons">
+            <input type="reset" id="btnReset" />
+            <button type="submit" id="btnShowData">Show Data</button>
+          </div>
+        </form>
       </div>
-      <div id="submitButtons">
-        <input type="reset" id="btnReset" />
-        <button type="submit" id="btnShowData">Show Data</button>
-      </div>
-    </form>
 
-    <div id="main-text">
-      <ul id="countriesList">
-        <!-- <div class="spinner-border text-primary" role="status">
+      <div id="main-text" class="font-monospace m-3">
+        <ul id="countriesList">
+          <!-- <div class="spinner-border text-primary" role="status">
           <span class="visually-hidden">Loading...</span>
         </div> -->
-      </ul>
-    </div>
+        </ul>
+      </div>
 
-    <div id="map"></div>
+      <div id="map"></div>
+    </main>
     <script src="jQuery.js"></script>
     <script src="bootstrap.js"></script>
     <script

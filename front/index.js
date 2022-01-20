@@ -47,8 +47,13 @@ button.addEventListener("click", () => {
 async function getUserCountries() {
   // On récupère le check radio
   const selected = document.querySelector('input[name="search"]:checked').value;
-
   const userInput = document.querySelector("input").value;
+
+  // GUARD pour passer à la sélection par continent
+  if (selected === "continent") {
+    startContinentProgram();
+    return;
+  }
 
   // Recherche à 2 adresses différentes selon la radio sélectionnée et le pays/capitale entrés dans l'input
   let res1;
@@ -57,6 +62,8 @@ async function getUserCountries() {
     res1 = await fetch(`https://restcountries.com/v3.1/name/${userInput}`);
   } else if (selected === "capital") {
     res1 = await fetch(`https://restcountries.com/v3.1/capital/${userInput}`);
+
+    // Recherche par continent
   }
   const data1 = await res1.json();
   return data1;
@@ -81,9 +88,28 @@ async function startSearchProgram() {
 // **************** //
 
 // Fonction recherche par continent
-const selectContinent = document.getElementsByName("continents")[0];
 
-for (let i = 1; i < selectContinent.length; i++) {
-  let continent = selectContinent[i].value;
-  console.log(continent);
+async function getContinent() {
+  const continent = document.getElementsByName("continents")[0].value;
+  const res2 = await fetch(
+    `https://restcountries.com/v3.1/region/${continent}`
+  );
+  const data2 = await res2.json();
+
+  return data2;
+}
+
+async function startContinentProgram() {
+  const continentCountries = await getContinent();
+
+  const continentCountriesName = continentCountries.map(function (country1) {
+    return `<li>
+    <p>Country : ${country1.flag}  ${country1.name.common.toUpperCase()}</p>
+    <p>Capital : ${country1.capital}</p>
+    <p>Population : ${country1.population}</p>
+    </li>`;
+  });
+
+  const list2 = document.querySelector("#countriesList");
+  list2.innerHTML = continentCountriesName.join("");
 }

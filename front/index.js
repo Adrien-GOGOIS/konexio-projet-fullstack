@@ -1,5 +1,6 @@
 // FONCTION DE CHARGEMENT DE LA PAGE
 
+// Animation bootstrap chargement "spinner"
 function loading() {
   document.querySelector(
     "#countriesList"
@@ -134,6 +135,7 @@ async function getContinent() {
   return data2;
 }
 
+// FONCTION D'AFFICHAGE RESULTATS RECHERCHE PAR CONTINENT
 async function startContinentProgram() {
   const continentCountries = await getContinent();
 

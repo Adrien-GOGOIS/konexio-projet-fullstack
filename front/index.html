@@ -13,7 +13,9 @@
     <link rel="stylesheet" href="css/style.css" />
     <title>Countries API</title>
   </head>
+  <!-- BODY -->
   <body>
+    <!-- TITRE -->
     <header class="text-center m-5">
       <h1
         class="display-1 text-center p-4 m-2 border-bottom border-dark border-3"
@@ -21,14 +23,14 @@
         Countries API
       </h1>
     </header>
-
+    <!-- MAIN -->
     <main>
       <div class="m-3 p-5">
+        <!-- FORMULAIRE DE RECHERCHE -->
         <form id="form" class="m-4">
+          <!-- ENTREE UTILISATEUR -->
           <div class="input-group mb-3 w-75">
-            <span class="input-group-text" id="inputGroup-sizing-lg"
-              >Name :</span
-            >
+            <span class="input-group-text" id="inputGroup-sizing-lg">Name</span>
             <input
               type="text"
               placeholder="Exp : USA or Oslo"
@@ -36,6 +38,7 @@
               class="form-control"
             />
           </div>
+          <!-- BOUTONS RADIO -->
           <div id="radio" class="m-2 w-75 row text-center">
             <div class="col-3">
               <input
@@ -80,6 +83,7 @@
               </select>
             </div>
           </div>
+          <!-- BOUTONS SUBMIT ET RELOAD -->
           <div id="submitButtons">
             <button type="submit" id="btnReset" class="m-2 btn btn-danger">
               Reload
@@ -89,8 +93,9 @@
             </button>
           </div>
           <div>
+            <!-- INSTRUCTIONS POUR RAFRAICHIR LA MAP -->
             <p class="text-center fst-italic mt-2 fw-lighter fs-6">
-              To reload map, please click on
+              To refresh map, please click on
               <span class="text-danger fw-light">reload</span> button before
               every new research
             </p>
@@ -98,6 +103,7 @@
         </form>
       </div>
 
+      <!-- AFFICHAGE LISTE PAYS SELECTIONNES -->
       <div class="row">
         <div id="main-text" class="font-monospace m-3 ps-5 col-4">
           <ul
@@ -105,10 +111,11 @@
             class="list-group list-group-flush rounded-3"
           ></ul>
         </div>
-
+        <!-- AFFICHAGE MAP LEAFLET -->
         <div id="map" class="col-8 mb-3 rounded-3"></div>
       </div>
     </main>
+    <!-- SCRIPT -->
     <script src="jQuery.js"></script>
     <script src="bootstrap.js"></script>
     <script

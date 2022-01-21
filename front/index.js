@@ -22,7 +22,7 @@ async function startProgram() {
   const countries = await getCountries();
 
   const countriesName = countries.map(function (country) {
-    return `<li>
+    return `<li class="list-group-item pt-4 ps-4">
     <p>Country : ${country.flag}  ${country.name.common.toUpperCase()}</p>
     <p>Capital : ${country.capital}</p>
     <p>Population : ${country.population}</p>
@@ -47,7 +47,7 @@ const reset = document.querySelector("#btnReset");
 
 // RESET
 reset.addEventListener("click", () => {
-  startProgram();
+  document.location.reload(true);
 });
 
 // Bouton recherche par pays/capitale
@@ -89,7 +89,7 @@ async function startSearchProgram() {
 
   // .. Et on l'affiche dans le HTML
   const list1 = document.querySelector("#countriesList");
-  list1.innerHTML = `<li>
+  list1.innerHTML = `<li class="list-group-item pt-4 ps-4">
   <p>Country : ${country1[0].flag}  ${country1[0].name.common.toUpperCase()}</p>
   <p>Capital : ${country1[0].capital}</p>
   <p>Population : ${country1[0].population}</p>
@@ -138,7 +138,7 @@ async function startContinentProgram() {
   const continentCountries = await getContinent();
 
   const continentCountriesName = continentCountries.map(function (country1) {
-    return `<li>
+    return `<li class="list-group-item pt-4 ps-4">
     <p>Country : ${country1.flag}  ${country1.name.common.toUpperCase()}</p>
     <p>Capital : ${country1.capital}</p>
     <p>Population : ${country1.population}</p>

@@ -27,11 +27,11 @@
         <form id="form" class="m-4">
           <div class="input-group mb-3 w-75">
             <span class="input-group-text" id="inputGroup-sizing-lg"
-              >Which country are you looking for?</span
+              >Name :</span
             >
             <input
               type="text"
-              placeholder="Exp : USA - France - Rome - Oslo"
+              placeholder="Exp : USA or Oslo"
               id="userInputName"
               class="form-control"
             />
@@ -82,11 +82,18 @@
           </div>
           <div id="submitButtons">
             <button type="submit" id="btnReset" class="m-2 btn btn-danger">
-              Reset
+              Reload
             </button>
             <button type="submit" id="btnShowData" class="m-2 btn btn-success">
               Show Data
             </button>
+          </div>
+          <div>
+            <p class="text-center fst-italic mt-2 fw-lighter fs-6">
+              To reload map, please click on
+              <span class="text-danger fw-light">reload</span> button before
+              every new research
+            </p>
           </div>
         </form>
       </div>
